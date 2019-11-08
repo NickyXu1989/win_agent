@@ -1,0 +1,183 @@
+{
+	"info": {
+		"_postman_id": "644251d9-f093-4acd-a206-60ff25d8bc02",
+		"name": "\bwin_agent",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://10.0.0.120:8080/script",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"scriptName\": \"test.bat\",\n    \"scriptText\": \"@echo off\\necho %PATH%;\\necho aaa\\nping 127.0.0.1\\nasdfasfd\",\n    \"md5\": \"b8d6cb2a869429d242dae0db046eddf7\",\n    \"fireCmd\": \"cmd\",\n    \"monId\": \"asdf2qerfasdfs123123asdfasdf\",\n    \"timeout\": 5\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://10.0.0.120:7878/agent/script",
+					"protocol": "http",
+					"host": [
+						"10",
+						"0",
+						"0",
+						"120"
+					],
+					"port": "7878",
+					"path": [
+						"agent",
+						"script"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://10.0.0.120:8080/script",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "scriptName",
+									"value": "test.bat",
+									"type": "text"
+								},
+								{
+									"key": "scriptText",
+									"value": "@echo off\necho %PATH%;\necho aaa\nping 127.0.0.1\nasdfasfd",
+									"type": "text"
+								},
+								{
+									"key": "md5",
+									"value": "b8d6cb2a869429d242dae0db046eddf7",
+									"type": "text"
+								},
+								{
+									"key": "fireCmd",
+									"value": "cmd",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://10.0.0.120:8080/script",
+							"protocol": "http",
+							"host": [
+								"10",
+								"0",
+								"0",
+								"120"
+							],
+							"port": "8080",
+							"path": [
+								"script"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 14 Oct 2019 07:32:18 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "900"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"C:\\\\Program Files (x86)\\\\Common Files\\\\Oracle\\\\Java\\\\javapath;C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Go\\\\bin;C:\\\\Program Files\\\\Git\\\\cmd;C:\\\\Users\\\\Administrator\\\\go\\\\bin;C:\\\\Go\\\\bin;\\naaa\\n\\n正在 Ping 127.0.0.1 具有 32 字节的数据:\\n来自 127.0.0.1 的回复: 字节=32 时间<1ms TTL=128\\n来自 127.0.0.1 的回复: 字节=32 时间<1ms TTL=128\\n来自 127.0.0.1 的回复: 字节=32 时间<1ms TTL=128\\n来自 127.0.0.1 的回复: 字节=32 时间<1ms TTL=128\\n\\n127.0.0.1 的 Ping 统计信息:\\n    数据包: 已发送 = 4，已接收 = 4，丢失 = 0 (0% 丢失)，\\n往返行程的估计时间(以毫秒为单位):\\n    最短 = 0ms，最长 = 0ms，平均 = 0ms\\n'asdfasfd' 不是内部或外部命令，也不是可运行的程序\\n或批处理文件。\\n\",\n    \"success\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "http://10.0.0.120:8080/mkagent/monitor",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"monId\": \"asdf2qerfasdfs123123asdfasdf\",\n    \"md5\": \"b8d6cb2a869429d242dae0db046eddf7\",\n    \"scriptName\": \"test.bat\",\n    \"fireCmd\": \"cmd\",\n    \"timeout\": 5\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://10.0.0.120:7878/mkagent/monitor",
+					"protocol": "http",
+					"host": [
+						"10",
+						"0",
+						"0",
+						"120"
+					],
+					"port": "7878",
+					"path": [
+						"mkagent",
+						"monitor"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "24d02af2-6036-4937-9967-e3ddcebb6f3d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "9a31102f-8266-47a1-ad69-d5dbd4476984",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
